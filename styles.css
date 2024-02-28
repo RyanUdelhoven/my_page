@@ -1,39 +1,57 @@
+:root {
+  --section-height: 95vh;
+  --navigation-height: calc(100vh - var(--section-height));
+}
+
+*,
+*::before,
+*::after,
 body {
   margin: 0;
   padding: 0;
-  /* This will create enough content to scroll */
-  min-height: 200vh;
+  box-sizing: border-box;
+}
+
+section:not(.navigation) {
+  height: var(--section-height);
+}
+
+#display::before,
+#about::before {
+  content: '';
+  height: var(--navigation-height);
+  display: block;
 }
 
 .landing {
-  height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
-.landing .content {
-  height: auto;
-}
-
-nav {
+.navigation {
   background: #333;
   color: #fff;
-  display: flex;
+  height: var(--navigation-height);
   position: sticky;
   top: 0;
   width: 100%;
-  z-index: 1000; /* Ensure it sits over other content */
-  align-self: flex-end;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10rem;
 }
 
-nav ul {
+.navigation ul {
   display: flex;
   list-style: none;
-  margin: 0;
-  padding: 0;
 }
 
-nav a {
+.navigation li:not(:last-child) {
+  padding-right: 3rem;
+}
+
+.navigation a {
   color: inherit;
   text-decoration: none;
 }
