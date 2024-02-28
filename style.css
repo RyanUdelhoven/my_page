@@ -23,9 +23,9 @@ section:not(.navigation) {
   display: block;
 }
 
-.landing {
-  display: flex;
-  flex-direction: column;
+#landing {
+  background-image: url("public/colorfulNebula.jpg");
+  background-size: cover;
 }
 
 .navigation {
