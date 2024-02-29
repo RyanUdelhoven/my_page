@@ -24,8 +24,17 @@ section:not(.navigation) {
 }
 
 #landing {
-  background-image: url("public/colorfulNebula.jpg");
+  background-image: url('public/colorfulNebula.jpg');
   background-size: cover;
+  display: flex;
+  align-items: center;
+  padding: 10rem;
+}
+
+#landing .introduction {
+  background: rgb(255, 255, 255, 0.4);
+  padding: 1rem;
+  border-radius: 5px;
 }
 
 .navigation {
