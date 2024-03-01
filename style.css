@@ -72,3 +72,8 @@ section:not(.navigation) {
   color: inherit;
   text-decoration: none;
 }
+
+.navigation h1 {
+  font-family: "Alex Brush", cursive;
+  font-size: 1.75rem;
+}
