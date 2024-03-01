@@ -29,12 +29,20 @@ section:not(.navigation) {
   display: flex;
   align-items: center;
   padding: 10rem;
+  justify-content: space-around;
+}
+
+#landing img {
+  width: 500px;
+  order: 2;
 }
 
 #landing .introduction {
   background: rgb(255, 255, 255, 0.4);
   padding: 1rem;
   border-radius: 5px;
+  order: 1;
+  width: 40%;
 }
 
 .navigation {
