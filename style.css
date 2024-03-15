@@ -1,51 +1,47 @@
 :root {
-  --section-height: 95vh;
-  --navigation-height: calc(100vh - var(--section-height));
+  --section-height: 95svh;
+  --navigation-height: calc(100svh - var(--section-height));
 }
 
-*,
-*::before,
-*::after,
-body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-section:not(.navigation) {
+header {
   height: var(--section-height);
-}
-
-#display::before,
-#about::before {
-  content: '';
-  height: var(--navigation-height);
-  display: block;
-}
-
-#landing {
-  background-image: url('public/colorfulNebula.jpg');
-  background-size: cover;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  padding: 10rem;
-  justify-content: space-around;
+
+  .title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: fade-out linear forwards;
+    animation-timeline: view(20svh 55svh);
+  }
+
+  h1 {
+    font-size: 8rem;
+  }
+
+  h2 {
+    font-size: 4rem;
+  }
 }
 
-#landing img {
-  width: 500px;
-  order: 2;
+@keyframes fade-out {
+  from {
+    opacity: 1;
+    transform: translateY(-10svh);
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(30svh);
+    transform: scale(0.8);
+  }
 }
 
-#landing .introduction {
-  background: rgb(255, 255, 255, 0.4);
-  padding: 1rem;
-  border-radius: 5px;
-  order: 1;
-  width: 40%;
-}
-
-.navigation {
+nav {
   background: #333;
   color: #fff;
   height: var(--navigation-height);
@@ -59,21 +55,25 @@ section:not(.navigation) {
   padding: 0 10rem;
 }
 
-.navigation ul {
+nav ul {
   display: flex;
   list-style: none;
 }
 
-.navigation li:not(:last-child) {
+nav li:not(:last-child) {
   padding-right: 3rem;
 }
 
-.navigation a {
+nav a {
   color: inherit;
   text-decoration: none;
 }
 
-.navigation h1 {
-  font-family: "Alex Brush", cursive;
+nav h1 {
+  font-family: 'Alex Brush', cursive;
   font-size: 1.75rem;
+}
+
+main {
+  height: var(--section-height);
 }

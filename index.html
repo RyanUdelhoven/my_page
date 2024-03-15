@@ -4,35 +4,36 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Udelhoven</title>
+    <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap" rel="stylesheet">
   </head>
   <body>
-    <section id="landing">
-      <img src="public/ryanLogo.png" alt="Ryan Udelhoven" />
-      <div class="introduction">
-        <h1>Introduction!</h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, excepturi autem. Eligendi et rerum possimus optio, maxime at dolor minima aliquam facere temporibus pariatur assumenda voluptatum quam cupiditate, ea velit fugiat quos mollitia quae adipisci quibusdam perferendis dolore cumque? Eum quidem modi quaerat quasi odit alias aut nostrum placeat harum eligendi, hic totam molestias, veniam dolorum doloremque! Itaque fugiat animi nulla commodi adipisci iure, in ea, sequi beatae esse error? Sapiente quia aliquam possimus nihil, dolorum sequi nisi aperiam, placeat dignissimos delectus doloribus molestiae similique provident accusantium natus ullam, rerum voluptatum eligendi itaque. Officia quas tempore dolorum ab excepturi, ducimus incidunt. Tempora voluptate cupiditate officiis voluptatum illum, rem hic. Dolorem porro vel facilis, perspiciatis asperiores ab hic est quos unde omnis aut dolores ipsam numquam, qui voluptate nulla accusamus, aperiam libero tenetur natus alias suscipit provident molestias? Cum illo quisquam, a rerum eligendi sequi. Temporibus facere magnam quasi officiis commodi.
-        </p>
+    <header id="home">
+      <div class="title">
+        <h1>Ryan Udelhoven</h1>
+        <h2>Full-Stack Engineer</h2>
       </div>
-    </section>
-
-    <nav class="navigation">
-      <h1>&lt; Ryan Udelhoven /&gt;</h1>
+    </header>
+    <nav>
+      <!-- Sticky to top, starts at bottom of header. 10svh? -->
+      <a href="#home"><h1>&lt; Ryan Udelhoven /&gt;</h1></a>
       <ul>
-        <li><a href="#landing">Home</a></li>
-        <li><a href="#display">Display</a></li>
         <li><a href="#about">About</a></li>
-      </ul>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
     </nav>
-
-    <section id="display">
-      <h1>Display</h1>
-    </section>
-
-    <section id="about">
-      <h1>About</h1>
-    </section>
+    <main>
+      <section class="spotlight">
+        <!-- 1 project & About side by side -->
+      </section>
+      <section class="portfolio">
+        <!-- CSS Grid controlled -->
+        <!-- Use @container to adjust # of columns w/ screen size -->
+      </section>
+    </main>
+    <footer>
+      <!-- Contact info, social media, etc. -->
+    </footer>
   </body>
 </html>
