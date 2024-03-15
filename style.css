@@ -16,7 +16,7 @@ header {
     justify-content: center;
     align-items: center;
     animation: fade-out linear forwards;
-    animation-timeline: view(20svh 55svh);
+    animation-timeline: view(-10svh 75svh);
   }
 
   h1 {
@@ -28,16 +28,16 @@ header {
   }
 }
 
-@keyframes fade-out {
-  from {
-    opacity: 1;
-    transform: translateY(-10svh);
-    transform: scale(1);
-  }
-  to {
-    opacity: 0;
-    transform: translateY(30svh);
-    transform: scale(0.8);
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes fade-out {
+    from {
+      opacity: 1;
+      transform: translateY(0svh) scale(1);
+    }
+    to {
+      opacity: 0;
+      transform: translateY(30svh) scale(0.8);
+    }
   }
 }
 
