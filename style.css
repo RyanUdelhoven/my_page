@@ -1,6 +1,14 @@
 :root {
+  --clr-neutral-100: hsl(0, 0%, 100%);
+  --clr-primary-100: hsl(205, 15%, 58%);
+  --clr-primary-400: hsl(215, 25%, 27%);
+  --clr-primary-800: hsl(217, 33%, 17%);
+  --clr-primary-900: hsl(218, 33%, 9%);
+
   --section-height: 95svh;
   --navigation-height: calc(100svh - var(--section-height));
+
+  background: var(--clr-primary-900);
   scroll-padding-top: 5svh;
 }
 
@@ -122,7 +130,7 @@ nav h1 {
 }
 
 .project:hover {
-  box-shadow: 15px 15px 10px rgba(255, 255, 255, 0.15);
+  box-shadow: 1rem 1rem .5rem var(--clr-primary-400);
   transform: translateY(-5px) scale(1.01);
 }
 
@@ -139,6 +147,82 @@ nav h1 {
   align-items: center;
   background: #ffffff0f;
   border-radius: 1rem;
-  box-shadow: 5px 5px 5px rgba(255, 255, 255, 0.15);
+  box-shadow: 0.5rem .5rem 0.25rem var(--clr-primary-800);
   padding: 2rem;
+}
+
+.tags {
+  margin: 0 10rem;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+.tags:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100%;
+  z-index: 2;
+  background: linear-gradient(to left, transparent, var(--clr-primary-900));
+}
+
+.tags:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100px;
+  height: 100%;
+  z-index: 2;
+  background: linear-gradient(to right, transparent, var(--clr-primary-900));
+}
+
+.tags:hover .tag-slider {
+  animation-play-state: paused;
+}
+
+.tag-slider {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  animation: slideLeft 15s linear infinite;
+  padding: 1rem 0 1rem 1rem;
+}
+
+.left {
+  animation: slideLeft 20s linear infinite;
+}
+
+.right {
+  animation: slideRight 25s linear infinite;
+}
+
+.tag-slider li {
+  padding: 1rem;
+  background: var(--clr-primary-400);
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem -0.25rem var(--clr-primary-100);
+}
+
+@keyframes slideLeft {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%); /* change to 100% to reverse direction */
+  }
+}
+
+@keyframes slideRight {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%); /* change to 100% to reverse direction */
+  }
 }
