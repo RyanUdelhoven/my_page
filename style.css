@@ -1,6 +1,7 @@
 :root {
   --section-height: 95svh;
   --navigation-height: calc(100svh - var(--section-height));
+  scroll-padding-top: 5svh;
 }
 
 header {
@@ -41,6 +42,10 @@ header {
   }
 }
 
+a:visited {
+  color: inherit;
+}
+
 nav {
   background: #333;
   color: #fff;
@@ -74,6 +79,70 @@ nav h1 {
   font-size: 1.75rem;
 }
 
-main {
+#spotlight {
   height: var(--section-height);
+  margin: 0 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+}
+
+#spotlight > * {
+  height: 60svh;
+  animation: fade-in linear forwards;
+  animation-timeline: view(80svh 0px);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(-30svh) scale(.8);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0svh) scale(1);
+    }
+  }
+}
+
+.spotlight-summary {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  width: 50%;
+}
+
+.spotlight-project {
+  width: 50%;
+}
+
+.project {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.project:hover {
+  transform: scale(1.01) translateY(-5px);
+  transition: transform .1s;
+  box-shadow: 15px 15px 15px rgba(255, 255, 255, 0.15);
+}
+
+.project img {
+  width: 100%;
+  border-radius: 1rem;
+  margin: 0px 0px 1rem 0px;
+}
+
+.card {
+  background: #ffffff0f;
+  border-radius: 1rem;
+  box-shadow: 10px 10px 10px rgba(255, 255, 255, 0.15);
+  padding: 2rem;
 }
