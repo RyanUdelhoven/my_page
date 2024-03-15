@@ -1,19 +1,14 @@
-:root {
-  --card-padding: 10px;
-}
-
 .grid-area {
   display: grid;
-  grid-template-columns: repeat(3, 100px);
-  grid-template-rows: repeat(4, 40px);
-  grid-template-areas: 
-    "e b ."
-    "a b d"
-    "a c d"
-    ". c f";
-  gap: 3px;
-  background-color: grey;
-  width: fit-content;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-areas:
+    'e b .'
+    'a b d'
+    'a c d'
+    '. c f';
+  gap: 2rem;
+  width: 100%;
 }
 
 .grid-area > div {
@@ -26,37 +21,29 @@
 }
 
 .grid-area > .item-a {
-  padding: var(--card-size);
   grid-area: a;
-  background-color: rebeccapurple;
+  border-top: rebeccapurple 2px solid;
 }
 
 .grid-area > .item-b {
-  padding: var(--card-size);
   grid-area: b;
-  background-color: firebrick;
+  border-top: firebrick 2px solid;
 }
 
 .grid-area > .item-c {
-  padding: var(--card-size);
   grid-area: c;
-  background-color: limegreen;
+  border-top: limegreen 2px solid;
 }
 
 .grid-area > .item-d {
-  padding: var(--card-size);
   grid-area: d;
-  background-color: dodgerblue;
+  border-top: dodgerblue 2px solid;
 }
 
 .grid-area > .text-e {
-  padding: var(--card-size);
   grid-area: e;
-  background-color: black;
 }
 
 .grid-area > .text-f {
-  padding: var(--card-size);
   grid-area: f;
-  background-color: black;
 }

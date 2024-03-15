@@ -3,13 +3,20 @@
   --clr-primary-100: hsl(205, 15%, 58%);
   --clr-primary-400: hsl(215, 25%, 27%);
   --clr-primary-800: hsl(217, 33%, 17%);
-  --clr-primary-900: hsl(218, 33%, 9%);
+  --clr-primary-900: hsl(222, 33%, 6%);
+
+  --clr-card: #ffffff24;
+  --clr-neon: hsl(317, 100%, 54%);
+
+  --font-alex: 'Alex Brush', cursive;
+  --font-poppins: "Poppins", sans-serif;
 
   --section-height: 95svh;
   --navigation-height: calc(100svh - var(--section-height));
 
   background: var(--clr-primary-900);
   scroll-padding-top: 5svh;
+  font-family: var(--font-poppins);
 }
 
 * {
@@ -86,8 +93,13 @@ nav a {
 }
 
 nav h1 {
-  font-family: 'Alex Brush', cursive;
+  font-family: var(--font-alex);
   font-size: 1.75rem;
+}
+
+nav h1:active,
+nav ul li:active {
+  transform: scale(0.9);
 }
 
 #spotlight {
@@ -120,7 +132,13 @@ nav h1 {
 }
 
 .spotlight-summary {
-  font-size: 2rem;
+  h1 {
+    font-size: 2rem;
+    margin: 0 0 1rem 0;
+  }
+  p {
+    font-size: 1.5rem;
+  }
 }
 
 .spotlight-project div {
@@ -130,7 +148,7 @@ nav h1 {
 }
 
 .project:hover {
-  box-shadow: 1rem 1rem .5rem var(--clr-primary-400);
+  box-shadow: 1rem 1rem 0.5rem var(--clr-primary-400);
   transform: translateY(-5px) scale(1.01);
 }
 
@@ -145,10 +163,14 @@ nav h1 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #ffffff0f;
+  background: var(--clr-card);
   border-radius: 1rem;
-  box-shadow: 0.5rem .5rem 0.25rem var(--clr-primary-800);
+  box-shadow: 0.5rem 0.5rem 0.25rem var(--clr-primary-800);
   padding: 2rem;
+}
+
+#slide-tags {
+  padding: 0 0 6rem 0;
 }
 
 .tags {
@@ -188,7 +210,7 @@ nav h1 {
 
 .tag-slider {
   display: flex;
-  gap: 1rem;
+  gap: 0.75rem;
   list-style: none;
   animation: slideLeft 15s linear infinite;
   padding: 1rem 0 1rem 1rem;
@@ -206,23 +228,33 @@ nav h1 {
   padding: 1rem;
   background: var(--clr-primary-400);
   border-radius: 0.5rem;
-  box-shadow: 0 0.5rem 1rem -0.25rem var(--clr-primary-100);
 }
 
-@keyframes slideLeft {
-  from {
-    transform: translateX(0);
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes slideLeft {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
   }
-  to {
-    transform: translateX(-100%); /* change to 100% to reverse direction */
+
+  @keyframes slideRight {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(100%);
+    }
   }
 }
 
-@keyframes slideRight {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(100%); /* change to 100% to reverse direction */
-  }
+#portfolio {
+  height: var(--section-height);
+  margin: 0 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
 }
