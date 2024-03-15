@@ -9,7 +9,7 @@
   --clr-neon: hsl(317, 100%, 54%);
 
   --font-alex: 'Alex Brush', cursive;
-  --font-poppins: "Poppins", sans-serif;
+  --font-poppins: 'Poppins', sans-serif;
 
   --section-height: 95svh;
   --navigation-height: calc(100svh - var(--section-height));
@@ -106,16 +106,30 @@ nav ul li:active {
   height: var(--section-height);
   margin: 0 10rem;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 5rem;
+  gap: 2rem;
 }
 
-#spotlight > * {
-  height: 60svh;
-  width: 50%;
+#spotlight > *:not(:last-child) {
+  height: auto;
   animation: fade-in linear forwards;
   animation-timeline: view(80svh 0px);
+}
+
+.summary-project {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin: 7rem 0 0 0;
+}
+
+.summary-project > * {
+  width: 50%;
+  height: 100%;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -175,6 +189,7 @@ nav ul li:active {
 
 .tags {
   margin: 0 10rem;
+  width: 80svw;
   display: flex;
   justify-content: center;
   overflow: hidden;
