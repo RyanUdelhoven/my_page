@@ -15,7 +15,7 @@
   --navigation-height: calc(100svh - var(--section-height));
 
   background: var(--clr-primary-900);
-  scroll-padding-top: 5svh;
+  scroll-padding-top: var(--navigation-height);
   font-family: var(--font-poppins);
 }
 
@@ -278,8 +278,29 @@ nav ul li:active {
 }
 
 #contact {
+  display: flex;
   height: calc(var(--navigation-height) * 2);
   margin: 10svh 0 0 0;
   background: #333;
   color: #fff;
+  padding: 0 10rem;
+  align-items: center;
+}
+
+#contact > * > *:first-child {
+  margin: 0 0 .5rem 0;
+}
+
+#contact > *:not(:first-child) {
+  margin: 0 0 0 2rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+
+  img {
+    width: 2rem;
+    margin: 0 .5rem 0 0;
+  }
 }
