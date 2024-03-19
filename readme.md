@@ -1,2 +1,2 @@
-# Work in progress.
-Eventually this is the page I'll launch on Github.
+# Start Up
+Open index.html in your browser.
