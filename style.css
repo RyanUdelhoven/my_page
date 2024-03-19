@@ -276,3 +276,10 @@ nav ul li:active {
   align-items: center;
   gap: 5rem;
 }
+
+#contact {
+  height: calc(var(--navigation-height) * 2);
+  margin: 10svh 0 0 0;
+  background: #333;
+  color: #fff;
+}
