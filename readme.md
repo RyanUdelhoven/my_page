@@ -1,2 +1,2 @@
-#### Start Up
+### Start Up
 Open index.html in your browser.
